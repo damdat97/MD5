@@ -1,0 +1,21 @@
+<h2>Calculator</h2>
+
+        <label for="first"> Số thứ nhất: </label>
+        <input #target id="first" type="number" class="form-control" [value]="first" (change)="setFirst(target.value)">
+
+        <label for="operator">Toán tử</label>
+        <select #target1 id="operator" class="form-control" [value]="operator" (change)="setOperator(target1.value)">
+          <option value="+">+</option>
+          <option value="-">-</option>
+          <option value="*">*</option>
+          <option value="/">/</option>
+        </select>
+
+        <label for="second"> Số thứ hai</label>
+        <input #target2 id="second" type="number" class="form-control" [value]="second" (change)="setSecond(target2.value)">
+
+<button (click)="calculate()">Tính toán</button>
+
+<div>
+  {{output}}
+</div>
