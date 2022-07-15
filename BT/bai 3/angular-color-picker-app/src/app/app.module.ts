@@ -7,13 +7,17 @@ import { ColorPickerComponent } from './color-picker/color-picker.component';
 import { ArticleComponent } from './article/article.component';
 import { LikeComponent } from './like/like.component';
 import {FormsModule} from "@angular/forms";
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ColorPickerComponent,
     ArticleComponent,
-    LikeComponent
+    LikeComponent,
+    NavbarComponent,
+    FooterComponent
   ],
     imports: [
         BrowserModule,
