@@ -1,7 +1,7 @@
 <h3>Color picker</h3>
 <div class="container">
-  <label for="colorPicker">Chọn màu:</label>
-  <input #target id="colorPicker" type="color" [value]="background" (change)="onChange(target.value)">
+  <label>Chọn màu:</label>
+  <input #target type="color" [value]="background" (change)="onChange(target.value)">
 </div>
 <div class="container">
   <div class="img-thumbnail" style="width: 200px; height: 200px" [style.background]="background">
