@@ -10,6 +10,7 @@ import {FormsModule} from "@angular/forms";
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { NameCardComponent } from './name-card/name-card.component';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NameCardComponent } from './name-card/name-card.component';
     LikeComponent,
     NavbarComponent,
     FooterComponent,
-    NameCardComponent
+    NameCardComponent,
+    ProgressBarComponent
   ],
     imports: [
         BrowserModule,
