@@ -1,0 +1,6 @@
+<h3>Từ điển Anh-Việt</h3>
+<input #target type="text" (change)="search(target.value)">
+<br>
+<p *ngIf="word">Nghĩa của từ {{word.word}}: {{word.meaning}}</p>
+
+
