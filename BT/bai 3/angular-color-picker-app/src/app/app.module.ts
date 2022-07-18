@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { ColorPickerComponent } from './color-picker/color-picker.component';
 import { ArticleComponent } from './article/article.component';
 import { LikeComponent } from './like/like.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { NameCardComponent } from './name-card/name-card.component';
@@ -16,6 +16,8 @@ import { CountdownTimerComponent } from './countdown-timer/countdown-timer.compo
 import { TimelinesComponent } from './timelines/timelines.component';
 import { YoutubePlaylistComponent } from './youtube-playlist/youtube-playlist.component';
 import { YoutubePlayerComponent } from './youtube-player/youtube-player.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
+import { ProductCreateComponent } from './product/product-create/product-create.component';
 
 @NgModule({
   declarations: [
@@ -32,12 +34,15 @@ import { YoutubePlayerComponent } from './youtube-player/youtube-player.componen
     TimelinesComponent,
     YoutubePlaylistComponent,
     YoutubePlayerComponent,
+    ProductListComponent,
+    ProductCreateComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
