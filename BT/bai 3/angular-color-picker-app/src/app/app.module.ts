@@ -14,6 +14,8 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { RatingBarComponent } from './rating-bar/rating-bar.component';
 import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
 import { TimelinesComponent } from './timelines/timelines.component';
+import { YoutubePlaylistComponent } from './youtube-playlist/youtube-playlist.component';
+import { YoutubePlayerComponent } from './youtube-player/youtube-player.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { TimelinesComponent } from './timelines/timelines.component';
     RatingBarComponent,
     CountdownTimerComponent,
     TimelinesComponent,
+    YoutubePlaylistComponent,
+    YoutubePlayerComponent,
   ],
     imports: [
         BrowserModule,
