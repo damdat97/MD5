@@ -1,0 +1,52 @@
+<div class="col-xs-12">
+  <form #userForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="email">Name</label>
+      <input type="email" class="form-control" id="email" [(ngModel)]="user.email" name="email_input" required email #inputEmail="ngModel">
+      <div class="alert alert-danger" *ngIf="!inputEmail.valid && (!inputEmail.pristine || userForm.submitted)">
+        <small>Đúng định dạng email</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" [(ngModel)]="user.password" name="password_input" required minlength="6" #inputPassword="ngModel">
+      <div class="alert alert-danger" *ngIf="!inputPassword.valid && (!inputPassword.pristine || userForm.submitted)">
+        <small>Password ít nhất 6 ký tự</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" class="form-control" id="confirmPassword" [(ngModel)]="user.confirmPassword" name="confirmPassword_input" required minlength="6" #inputConfirmPassword="ngModel">
+      <div class="alert alert-danger" *ngIf="!inputConfirmPassword.valid && (!inputConfirmPassword.pristine || userForm.submitted)">
+        <small>Confirm Password ít nhất 6 ký tự và phải trùng password</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="country">Country</label>
+      <select name="country" id="country" [(ngModel)]="user.country">
+        <option value=""></option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="number" class="form-control" id="age" [(ngModel)]="user.age" name="age_input" required min="18" #inputAge="ngModel">
+      <div class="alert alert-danger" *ngIf="!inputAge.valid && (!inputAge.pristine || userForm.submitted)">
+        <small>Tuổi phải lớn hơn 18</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="number" class="form-control" id="phone" [(ngModel)]="user.phone" name="phone_input" required pattern="+84\d{9,10}$" #inputPhone="ngModel">
+      <div class="alert alert-danger" *ngIf="!inputPhone.valid && (!inputPhone.pristine || userForm.submitted)">
+        <small>Sđt phải đúng định dạng</small>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <hr>
+  <h4>Input Data</h4>
+  <p> {{ user | json }} </p>
+  <hr>
+  <h4>Form Data</h4>
+  <p> {{ userForm.value | json }} </p>
+</div>

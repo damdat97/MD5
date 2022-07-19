@@ -21,6 +21,7 @@ import { ProductCreateComponent } from './product/product-create/product-create.
 import { WordListComponent } from './word/word-list/word-list.component';
 import { WordDetailComponent } from './word/word-detail/word-detail.component';
 import { DictionaryPageComponent } from './word/dictionary-page/dictionary-page.component';
+import { UserFormComponent } from './user-form/user-form.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { DictionaryPageComponent } from './word/dictionary-page/dictionary-page.
     WordListComponent,
     WordDetailComponent,
     DictionaryPageComponent,
+    UserFormComponent,
   ],
   imports: [
     BrowserModule,
