@@ -22,6 +22,8 @@ import { WordListComponent } from './word/word-list/word-list.component';
 import { WordDetailComponent } from './word/word-detail/word-detail.component';
 import { DictionaryPageComponent } from './word/dictionary-page/dictionary-page.component';
 import { UserFormComponent } from './user-form/user-form.component';
+import { ProductUpdateComponent } from './product/product-update/product-update.component';
+import { ProductDeleteComponent } from './product/product-delete/product-delete.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { UserFormComponent } from './user-form/user-form.component';
     WordDetailComponent,
     DictionaryPageComponent,
     UserFormComponent,
+    ProductUpdateComponent,
+    ProductDeleteComponent,
   ],
   imports: [
     BrowserModule,

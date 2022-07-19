@@ -1,17 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {WordDetailComponent} from "./word/word-detail/word-detail.component";
-import {DictionaryPageComponent} from "./word/dictionary-page/dictionary-page.component";
+import {ProductListComponent} from "./product/product-list/product-list.component";
+import {ProductCreateComponent} from "./product/product-create/product-create.component";
+import {ProductUpdateComponent} from "./product/product-update/product-update.component";
+import {ProductDeleteComponent} from "./product/product-delete/product-delete.component";
 
 
-const routes: Routes = [
-  {
-    path: 'dictionary', component: DictionaryPageComponent,
-    children: [
-      {
-        path: ':word', component: WordDetailComponent
-      }]
-  }];
+const routes: Routes = [{
+  path: 'product/list',
+  component: ProductListComponent
+}, {
+  path: 'product/create',
+  component: ProductCreateComponent
+}, {
+  path: 'product/edit/:id',
+  component: ProductUpdateComponent
+}, {
+  path: 'product/delete/:id',
+  component: ProductDeleteComponent
+}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
