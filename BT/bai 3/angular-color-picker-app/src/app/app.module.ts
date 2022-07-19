@@ -16,14 +16,12 @@ import { CountdownTimerComponent } from './countdown-timer/countdown-timer.compo
 import { TimelinesComponent } from './timelines/timelines.component';
 import { YoutubePlaylistComponent } from './youtube-playlist/youtube-playlist.component';
 import { YoutubePlayerComponent } from './youtube-player/youtube-player.component';
-import { ProductListComponent } from './product/product-list/product-list.component';
-import { ProductCreateComponent } from './product/product-create/product-create.component';
 import { WordListComponent } from './word/word-list/word-list.component';
 import { WordDetailComponent } from './word/word-detail/word-detail.component';
 import { DictionaryPageComponent } from './word/dictionary-page/dictionary-page.component';
 import { UserFormComponent } from './user-form/user-form.component';
-import { ProductUpdateComponent } from './product/product-update/product-update.component';
-import { ProductDeleteComponent } from './product/product-delete/product-delete.component';
+import {ProductModule} from "./product/product.module";
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -40,21 +38,19 @@ import { ProductDeleteComponent } from './product/product-delete/product-delete.
     TimelinesComponent,
     YoutubePlaylistComponent,
     YoutubePlayerComponent,
-    ProductListComponent,
-    ProductCreateComponent,
     WordListComponent,
     WordDetailComponent,
     DictionaryPageComponent,
     UserFormComponent,
-    ProductUpdateComponent,
-    ProductDeleteComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        ProductModule,
+        SharedModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
