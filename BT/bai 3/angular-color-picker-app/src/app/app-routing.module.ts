@@ -4,12 +4,12 @@ import {RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'product',
-    loadChildren: () => import('./product/product.module').then(module => module.ProductModule)
+    path: 'cities',
+    loadChildren: () => import('./city/city.module').then(module => module.CityModule)
   },
   {
-    path: 'category',
-    loadChildren: () => import('./category/category.module').then(module => module.CategoryModule)
+    path: 'countries',
+    loadChildren: () => import('./country/country.module').then(module => module.CountryModule)
   }
 ];
 

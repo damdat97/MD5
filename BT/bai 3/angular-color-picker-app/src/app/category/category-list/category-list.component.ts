@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Category} from '../../model/category';
+import {City} from '../../model/city';
 import {CategoryService} from '../../service/category.service';
 
 @Component({
@@ -8,7 +8,7 @@ import {CategoryService} from '../../service/category.service';
   styleUrls: ['./category-list.component.css']
 })
 export class CategoryListComponent implements OnInit {
-  categories: Category[] = [];
+  categories: City[] = [];
 
   constructor(private categoryService: CategoryService) {
   }
@@ -18,7 +18,10 @@ export class CategoryListComponent implements OnInit {
   }
 
   getAll() {
-    this.categories = this.categoryService.getAll();
+    this.categoryService.getAll().subscribe(categories => {
+      console.log(categories)
+      this.categories = categories;
+    });
   }
 
 }

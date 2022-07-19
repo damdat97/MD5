@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import {ActivatedRoute, ParamMap, Router} from '@angular/router';
+import {ActivatedRoute, ParamMap} from '@angular/router';
 import {CategoryService} from '../../service/category.service';
-import {ProductService} from "../../service/product.service";
 
 @Component({
   selector: 'app-category-edit',
@@ -10,23 +9,15 @@ import {ProductService} from "../../service/product.service";
   styleUrls: ['./category-edit.component.css']
 })
 export class CategoryEditComponent implements OnInit {
-  categoryForm: FormGroup = new FormGroup({
-    id: new FormControl(''),
-    name: new FormControl(''),
-  });
-  // @ts-ignore
-  id: number;
+  categoryForm: FormGroup | any;
+  id: number | any;
 
   constructor(private categoryService: CategoryService,
-              private activatedRoute: ActivatedRoute,
-              private router: Router) {
+              private activatedRoute: ActivatedRoute) {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       // @ts-ignore
       this.id = +paramMap.get('id');
-      const category = this.getCategory(this.id);
-
-      // @ts-ignore
-      this.categoryForm.setValue(category);
+      this.getCategory(this.id);
     });
   }
 
@@ -34,12 +25,19 @@ export class CategoryEditComponent implements OnInit {
   }
 
   getCategory(id: number) {
-    return this.categoryService.findById(id);
+    return this.categoryService.findById(id).subscribe(category => {
+      this.categoryForm = new FormGroup({
+        name: new FormControl(category.name),
+      });
+    });
   }
 
   updateCategory(id: number) {
     const category = this.categoryForm.value;
-    this.categoryService.updateCategory(id, category);
-    alert('Cập nhật thành công');
+    this.categoryService.updateCategory(id, category).subscribe(() => {
+      alert('Cập nhật thành công');
+    }, e => {
+      console.log(e);
+    });
   }
 }
