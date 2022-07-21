@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CityService} from "../../service/city.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {FormControl, FormGroup} from "@angular/forms";
 import {Country} from "../../model/country";
 import {CountryService} from "../../service/country.service";
@@ -26,7 +26,8 @@ export class CityEditComponent implements OnInit {
 
   constructor(private cityService: CityService,
               private activeRoute: ActivatedRoute,
-              private countryService: CountryService) { }
+              private countryService: CountryService,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.countryService.getAll().subscribe((data)=> {
@@ -74,6 +75,7 @@ export class CityEditComponent implements OnInit {
       // @ts-ignore
       $('#exampleModalEdit').modal('hide');
       this.cityForm.reset()
+      this.router.navigate(["/cities"])
     }, error => {
       alert("Loi")
       console.log(error)

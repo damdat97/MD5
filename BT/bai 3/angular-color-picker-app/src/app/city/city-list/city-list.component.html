@@ -4,6 +4,11 @@
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" [routerLink]="['/cities/create']">
     Them moi
   </button>
+  <form [formGroup]="form" (submit)="find()">
+  <input type="number" formControlName="from" placeholder="From">
+  <input type="number" formControlName="to" placeholder="To">
+  <button type="submit">Tim</button>
+  </form>
   <table class="table table-striped">
     <thead>
     <tr>

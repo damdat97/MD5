@@ -4,6 +4,7 @@ import {CategoryService} from "../../service/category.service";
 import {Country} from "../../model/country";
 import {CityService} from "../../service/city.service";
 import {CountryService} from "../../service/country.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-city-create',
@@ -23,7 +24,8 @@ export class CityCreateComponent implements OnInit {
   listCountry: Country[] = []
 
   constructor(private citiesService: CityService,
-              private countryService: CountryService) {
+              private countryService: CountryService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -51,6 +53,7 @@ export class CityCreateComponent implements OnInit {
       // @ts-ignore
       $("#exampleModal").modal("hide");
       this.cityForm.reset()
+      this.router.navigate(["/cities"])
     }, error => {
       alert("Loi");
       console.log(error)

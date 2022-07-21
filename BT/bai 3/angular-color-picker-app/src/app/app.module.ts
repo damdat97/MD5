@@ -7,6 +7,7 @@ import {SharedModule} from './shared/shared.module';
 import {HttpClientModule} from '@angular/common/http';
 import { CityListComponent } from './city/city-list/city-list.component';
 import { CountryListComponent } from './country/country-list/country-list.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -14,12 +15,13 @@ import { CountryListComponent } from './country/country-list/country-list.compon
     CityListComponent,
     CountryListComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    SharedModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        SharedModule,
+        HttpClientModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

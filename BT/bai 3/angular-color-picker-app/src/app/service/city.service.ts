@@ -33,4 +33,8 @@ export class CityService {
   deleteCity(id: number): Observable<City> {
     return this.http.delete<City>(`${API_URL}/cities/${id}`);
   }
+
+  findByArea(from: number | any, to: number | any): Observable<City> {
+    return this.http.get<City>(`${API_URL}/cities/find-by-area?from=${from}&to=${to}`)
+  }
 }
